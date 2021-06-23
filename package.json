@@ -12,5 +12,8 @@
   "bugs": {
     "url": "https://github.com/z00rat/terminal-themes.css/issues"
   },
-  "homepage": "https://github.com/z00rat/terminal-themes.css#readme"
+  "homepage": "https://github.com/z00rat/terminal-themes.css#readme",
+  "dependencies": {
+    "commander": "^7.2.0"
+  }
 }
