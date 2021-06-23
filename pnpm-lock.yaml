@@ -7,6 +7,7 @@ specifiers:
   cssjson: ^2.1.3
   csso: ^4.2.0
   js-yaml: ^4.1.0
+  json-to-css: ^0.1.0
 
 dependencies:
   chalk: 4.1.1
@@ -15,6 +16,7 @@ dependencies:
   cssjson: 2.1.3
   csso: 4.2.0
   js-yaml: 4.1.0
+  json-to-css: 0.1.0
 
 packages:
 
@@ -105,6 +107,10 @@ packages:
     hasBin: true
     dependencies:
       argparse: 2.0.1
+    dev: false
+
+  /json-to-css/0.1.0:
+    resolution: {integrity: sha512-0A6Xooey9slodt9MX7wWRVNo5G7fujVlBkdyhjNPg3GzoJW7j5EBD/Duw3zK3V132Ma/HTEnBRchl1PmOWiZgg==}
     dev: false
 
   /mdn-data/2.0.14:
