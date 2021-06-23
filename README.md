@@ -1,8 +1,8 @@
-#terminal-themes.css
+# terminal-themes.css
 Terminal color schemes/themes as css or json file for using those in browser.
 
 ---
-##status
+## status
 there is not much to here,
 color plate is not something that ever got an update.
 so, for the most part after writing the converter script this repo will be kinda dead.
@@ -10,7 +10,7 @@ unless any new color plate got released or any bug can be found.
 please open an issue if needed. 
 
 ---
-##variants 
+## variants 
 | branch names  |         description          | compact naming | cursor | selection |
 | :-----------: | :--------------------------: | :------------: | :----: | :-------: |
 |     json      |       raw json version       |       🔴        |   🟢    |     🟢     |
@@ -23,11 +23,11 @@ please open an issue if needed.
 if you need or have any idea about any other possible variant please open an issue. 
 
 ---
-###color scheme sources
+### color scheme sources
 ###### - https://github.com/mbadolato/iTerm2-Color-Schemes/tree/master/alacritty
 
 ---
-###tools i used
+### tools i used
 - shell script 
 
 ---
