@@ -1,0 +1,16 @@
+{
+  "name": "converter",
+  "version": "1.0.0",
+  "description": "color schemes converter to css and json",
+  "main": "converter.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/z00rat/terminal-themes.css.git"
+  },
+  "author": "z00rat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/z00rat/terminal-themes.css/issues"
+  },
+  "homepage": "https://github.com/z00rat/terminal-themes.css#readme"
+}
