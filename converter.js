@@ -1,9 +1,21 @@
+const fs = require("fs");
 const { program } = require("commander");
-program.version("0.0.1");
+const yaml = require("js-yaml");
 
-// .option("-d, --debug", "output extra debugging")
-program.requiredOption("-f, --file [letters...]", "location of the yaml file");
+program.version("0.0.1");
+program.requiredOption("-f, --file [letters...]", "location of the yaml file").option("-d, --debug", "output extra debugging");
 program.parse(process.argv);
 const options = program.opts();
 
-console.log(options);
+if (options.debug) {
+  console.log(options);
+}
+
+for (let i = 0; i < options.file.length; i++) {
+  try {
+    const doc = yaml.load(fs.readFileSync(options.file[i], "utf8"));
+    console.log(doc);
+  } catch (e) {
+    console.log(e);
+  }
+}
