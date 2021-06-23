@@ -28,6 +28,13 @@ if you need or have any idea about any other possible variant please open an iss
 
 ---
 ### tools i used
-- shell script 
+- **shell script** *for basic automation*
+- [nodejs](https://nodejs.org) *for generator/converter*
+- [pnpm](https://pnpm.io) *for nodejs package management*
+- [chalk](https://www.npmjs.com/package/chalk) *for colorful output from nodejs code*
+- [commander](https://www.npmjs.com/package/commander) *for parsing cli arguments*
+- [js-yaml](https://www.npmjs.com/package/js-yaml) *for YAML to JSON*
+- [VSCode](https://code.visualstudio.com/) *as code editor*
+-
 
 ---
