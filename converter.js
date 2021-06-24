@@ -3,7 +3,6 @@ var path = require("path");
 const { program } = require("commander");
 const YAML = require("js-yaml");
 const chalk = require("chalk");
-const { toCSS, toJSON } = require("cssjson");
 var csso = require("csso");
 var css = require("css");
 const jsonToCss = require("json-to-css");
