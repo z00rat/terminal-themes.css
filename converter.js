@@ -113,6 +113,12 @@ for (let i = 0; i < JSONS.length; i++) {
     jsonCss = {};
 
     isDebug ? [console.log(chalk.bgRedBright.black(filename + " :"))] : [];
+    console.log(chalk.bold.green("FILE NAME: ") + chalk.italic.underline.blue(filename));
+
+    if (input.selection == null || input.cursor == null) {
+      console.log(chalk.bold.red("this file don't have any 'selection' or 'cursor', which is not acceptable."));
+      continue;
+    }
 
     jsonOut.normal = {};
     jsonOut.bright = {};
