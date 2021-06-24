@@ -38,7 +38,7 @@ for (let i = 0; i < options.file.length; i++) {
               chalk.underline.bold.cyan(JSONS[i].filename) +
               chalk.yellow(":")
           ),
-          console.log(JSONS[i]),
+          // console.log(JSONS[i]),
         ]
       : [];
   } catch (e) {
@@ -74,8 +74,6 @@ function compressColor(hex) {
 
 function cssClassGen(clr, className, jsonCss) {
   // console.log(clr);
-  // var jsonCss = {};
-  // var theCss = "";
 
   className = "." + className;
   jsonCss[className] = {};
@@ -84,6 +82,19 @@ function cssClassGen(clr, className, jsonCss) {
   className = className + "-bg";
   jsonCss[className] = {};
   jsonCss[className]["background-color"] = "#" + clr;
+  // theCss = jsonToCss.of(jsonCss);
+  // console.log(jsonCss);
+  // console.log(theCss);
+
+  return jsonCss;
+}
+
+function cssVarGen(clr, varName, jsonCss) {
+  // console.log(clr);
+
+  varName = "--" + varName;
+  jsonCss[":root"][varName] = "#" + clr;
+
   // theCss = jsonToCss.of(jsonCss);
   // console.log(jsonCss);
   // console.log(theCss);
@@ -167,9 +178,45 @@ for (let i = 0; i < JSONS.length; i++) {
 
     isDebug
       ? [
-          console.log(jsonCss),
+          // console.log(jsonCss),
           // console.log(cssClass),
-          console.log(chalk.bgMagentaBright.black(JSON.stringify(CSSCLASS))),
+          console.log(chalk.bgMagentaBright.black(CSSCLASS)),
+        ]
+      : [];
+
+    jsonCss = {};
+    jsonCss[":root"] = {};
+
+    jsonCss = cssVarGen(jsonOut.normal.black, "normal-black", jsonCss);
+    jsonCss = cssVarGen(jsonOut.normal.blue, "normal-blue", jsonCss);
+    jsonCss = cssVarGen(jsonOut.normal.cyan, "normal-cyan", jsonCss);
+    jsonCss = cssVarGen(jsonOut.normal.green, "normal-green", jsonCss);
+    jsonCss = cssVarGen(jsonOut.normal.magenta, "normal-magenta", jsonCss);
+    jsonCss = cssVarGen(jsonOut.normal.red, "normal-red", jsonCss);
+    jsonCss = cssVarGen(jsonOut.normal.white, "normal-white", jsonCss);
+    jsonCss = cssVarGen(jsonOut.normal.yellow, "normal-yellow", jsonCss);
+    jsonCss = cssVarGen(jsonOut.bright.black, "bright-black", jsonCss);
+    jsonCss = cssVarGen(jsonOut.bright.blue, "bright-blue", jsonCss);
+    jsonCss = cssVarGen(jsonOut.bright.cyan, "bright-cyan", jsonCss);
+    jsonCss = cssVarGen(jsonOut.bright.green, "bright-green", jsonCss);
+    jsonCss = cssVarGen(jsonOut.bright.magenta, "bright-magenta", jsonCss);
+    jsonCss = cssVarGen(jsonOut.bright.red, "bright-red", jsonCss);
+    jsonCss = cssVarGen(jsonOut.bright.white, "bright-white", jsonCss);
+    jsonCss = cssVarGen(jsonOut.bright.yellow, "bright-yellow", jsonCss);
+    jsonCss = cssVarGen(jsonOut.primary.background, "primary-background", jsonCss);
+    jsonCss = cssVarGen(jsonOut.primary.foreground, "primary-foreground", jsonCss);
+    jsonCss = cssVarGen(jsonOut.selection.background, "selection-background", jsonCss);
+    jsonCss = cssVarGen(jsonOut.selection.text, "selection-text", jsonCss);
+    jsonCss = cssVarGen(jsonOut.cursor.cursor, "cursor-cursor", jsonCss);
+    jsonCss = cssVarGen(jsonOut.cursor.text, "cursor-text", jsonCss);
+
+    var CSSVAR = csso.minify(jsonToCss.of(jsonCss)).css;
+
+    isDebug
+      ? [
+          // console.log(jsonCss),
+          // console.log(cssClass),
+          console.log(chalk.bgGreenBright.black(CSSVAR)),
         ]
       : [];
 
@@ -179,6 +226,10 @@ for (let i = 0; i < JSONS.length; i++) {
 
     console.log(chalk.redBright.bold("[ CSSCLASS ]") + chalk.yellow(" writing to ") + chalk.magenta("css-class/" + filename + ".css"));
     fs.writeFileSync("css-class/" + filename + ".css", CSSCLASS);
+
+    console.log(chalk.redBright.bold("[  CSSVAR  ]") + chalk.yellow(" writing to ") + chalk.magenta("css-var/" + filename + ".css"));
+    fs.writeFileSync("css-var/" + filename + ".css", CSSVAR);
+    //
   } catch (e) {
     console.log(chalk.red("ERROR:"));
     console.log(e);
