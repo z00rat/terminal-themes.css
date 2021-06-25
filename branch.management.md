@@ -28,3 +28,8 @@ git branch -d localBranchName
 git push origin --delete remoteBranchName
 ```
 
+<!-- https://stackoverflow.com/a/6866485 -->
+## delete last commit 
+```sh
+git reset --hard HEAD~1
+```
