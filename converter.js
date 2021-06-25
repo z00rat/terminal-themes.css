@@ -101,6 +101,7 @@ function cssVarGen(clr, varName, jsonCss) {
   return jsonCss;
 }
 
+console.log("#!/bin/bash\n");
 /**
  * json/css generate loop
  */
@@ -116,7 +117,7 @@ for (let i = 0; i < JSONS.length; i++) {
     console.log('echo "FILE: ' + filename + '"');
 
     if (input.selection == null || input.cursor == null) {
-      console.log(chalk.bold.red("this file don't have any 'selection' or 'cursor', which is not acceptable."));
+      // console.log(chalk.bold.red("this file don't have any 'selection' or 'cursor', which is not acceptable."));
       continue;
     }
 
@@ -239,7 +240,7 @@ for (let i = 0; i < JSONS.length; i++) {
 
     // console.log(chalk.redBright.bold("[  CSSVAR  ]") + chalk.yellow(" writing to ") + chalk.magenta("css-var/" + filename + ".css"));
     fs.writeFileSync("css-var/" + filename + ".css", CSSVAR);
-    console.log('cd css-var && git add "' + filename + '.css"&& git commit -s -m "adding json version of \'' + filename + "'\" && cd ..");
+    console.log('cd css-var && git add "' + filename + '.css" && git commit -s -m "adding json version of \'' + filename + "'\" && cd ..");
 
     //
   } catch (e) {
