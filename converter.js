@@ -114,7 +114,7 @@ for (let i = 0; i < JSONS.length; i++) {
 
     isDebug ? [console.log(chalk.bgRedBright.black(filename + " :"))] : [];
     // console.log(chalk.bold.green("FILE NAME: ") + chalk.italic.underline.blue(filename));
-    console.log('echo "FILE: ' + filename + '"');
+    console.log('tput setaf 3 && echo "FILE: ' + filename + '" && tput sgr0');
 
     if (input.selection == null || input.cursor == null) {
       // console.log(chalk.bold.red("this file don't have any 'selection' or 'cursor', which is not acceptable."));
@@ -230,17 +230,18 @@ for (let i = 0; i < JSONS.length; i++) {
     //
     // console.log(chalk.redBright.bold("[ FULLJSON ]") + chalk.yellow(" writing to ") + chalk.magenta("json/" + filename + ".json"));
     fs.writeFileSync("json/" + filename + ".json", FULLJSON);
-    console.log('cd json && git add "' + filename + '.json" && git commit -s -m "adding json version of \'' + filename + "'\" && cd ..");
+    // prettier-ignore
+    console.log('cd json && git add "' + filename + ".json\" && git commit -s -m \"adding 'full+big json' version of '" + filename + "'\" && cd ..");
 
     // console.log(chalk.redBright.bold("[ CSSCLASS ]") + chalk.yellow(" writing to ") + chalk.magenta("css-class/" + filename + ".css"));
     fs.writeFileSync("css-class/" + filename + ".css", CSSCLASS);
-    console.log(
-      'cd css-class && git add "' + filename + '.css" && git commit -s -m "adding json version of \'' + filename + "'\" && cd .."
-    );
+    // prettier-ignore
+    console.log('cd css-class && git add "' + filename + ".css\" && git commit -s -m \"adding 'full+big css-class' version of '" + filename + "'\" && cd ..");
 
     // console.log(chalk.redBright.bold("[  CSSVAR  ]") + chalk.yellow(" writing to ") + chalk.magenta("css-var/" + filename + ".css"));
     fs.writeFileSync("css-var/" + filename + ".css", CSSVAR);
-    console.log('cd css-var && git add "' + filename + '.css" && git commit -s -m "adding json version of \'' + filename + "'\" && cd ..");
+    // prettier-ignore
+    console.log('cd css-var && git add "' + filename + ".css\" && git commit -s -m \"adding 'full+big css-variable' version of '" + filename + "'\" && cd ..");
 
     //
   } catch (e) {
