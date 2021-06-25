@@ -35,6 +35,11 @@ if you need or have any idea about any other possible variant please open an iss
 - [commander](https://www.npmjs.com/package/commander) *for parsing cli arguments*
 - [js-yaml](https://www.npmjs.com/package/js-yaml) *for YAML to JSON*
 - [VSCode](https://code.visualstudio.com/) *as code editor*
+- [css](https://www.npmjs.com/package/css) *for css to json*
+- [csso](https://www.npmjs.com/package/csso) *for compressing hex color*
+- [json-to-css](https://www.npmjs.com/package/json-to-css) *for json to css*
+- **git & github** *why not ??*
 -
 
 ---
+star it if you like
