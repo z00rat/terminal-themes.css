@@ -35,7 +35,7 @@ for (let i = 0; i < options.file.length; i++) {
           console.log(
             chalk.yellow(chalk.bold.redBright("[" + i + "] ") + "YAML to JSON of '") +
               chalk.underline.bold.cyan(JSONS[i].filename) +
-              chalk.yellow(":")
+              chalk.yellow("':")
           ),
           // console.log(JSONS[i]),
         ]
@@ -101,7 +101,7 @@ function cssVarGen(clr, varName, jsonCss) {
   return jsonCss;
 }
 
-console.log("#!/bin/bash\n");
+// console.log("#!/bin/bash\n");
 /**
  * json/css generate loop
  */
@@ -113,43 +113,45 @@ for (let i = 0; i < JSONS.length; i++) {
     jsonCss = {};
 
     isDebug ? [console.log(chalk.bgRedBright.black(filename + " :"))] : [];
-    // console.log(chalk.bold.green("FILE NAME: ") + chalk.italic.underline.blue(filename));
-    console.log('tput setaf 3 && echo "FILE: ' + filename + '" && tput sgr0');
+    console.log(chalk.bold.green("FILE NAME: ") + chalk.italic.underline.blue(filename));
+    // console.log('tput setaf 3 && echo "FILE: ' + filename + '" && tput sgr0');
 
     if (input.selection == null || input.cursor == null) {
       // console.log(chalk.bold.red("this file don't have any 'selection' or 'cursor', which is not acceptable."));
       continue;
     }
 
-    jsonOut.normal = {};
-    jsonOut.bright = {};
-    jsonOut.primary = {};
-    jsonOut.selection = {};
-    jsonOut.cursor = {};
-    jsonOut.normal.black = compressColor(input.normal.black);
-    jsonOut.normal.blue = compressColor(input.normal.blue);
-    jsonOut.normal.cyan = compressColor(input.normal.cyan);
-    jsonOut.normal.green = compressColor(input.normal.green);
-    jsonOut.normal.magenta = compressColor(input.normal.magenta);
-    jsonOut.normal.red = compressColor(input.normal.red);
-    jsonOut.normal.white = compressColor(input.normal.white);
-    jsonOut.normal.yellow = compressColor(input.normal.yellow);
-    jsonOut.bright.black = compressColor(input.bright.black);
-    jsonOut.bright.blue = compressColor(input.bright.blue);
-    jsonOut.bright.cyan = compressColor(input.bright.cyan);
-    jsonOut.bright.green = compressColor(input.bright.green);
-    jsonOut.bright.magenta = compressColor(input.bright.magenta);
-    jsonOut.bright.red = compressColor(input.bright.red);
-    jsonOut.bright.white = compressColor(input.bright.white);
-    jsonOut.bright.yellow = compressColor(input.bright.yellow);
-    jsonOut.primary.background = compressColor(input.primary.background);
-    jsonOut.primary.foreground = compressColor(input.primary.foreground);
-    jsonOut.selection.background = compressColor(input.selection.background);
-    jsonOut.selection.text = compressColor(input.selection.text);
-    jsonOut.cursor.cursor = compressColor(input.cursor.cursor);
-    jsonOut.cursor.text = compressColor(input.cursor.text);
+    {
+      jsonOut.normal = {};
+      jsonOut.bright = {};
+      jsonOut.primary = {};
+      jsonOut.selection = {};
+      jsonOut.cursor = {};
+      jsonOut.normal.black = compressColor(input.normal.black);
+      jsonOut.normal.blue = compressColor(input.normal.blue);
+      jsonOut.normal.cyan = compressColor(input.normal.cyan);
+      jsonOut.normal.green = compressColor(input.normal.green);
+      jsonOut.normal.magenta = compressColor(input.normal.magenta);
+      jsonOut.normal.red = compressColor(input.normal.red);
+      jsonOut.normal.white = compressColor(input.normal.white);
+      jsonOut.normal.yellow = compressColor(input.normal.yellow);
+      jsonOut.bright.black = compressColor(input.bright.black);
+      jsonOut.bright.blue = compressColor(input.bright.blue);
+      jsonOut.bright.cyan = compressColor(input.bright.cyan);
+      jsonOut.bright.green = compressColor(input.bright.green);
+      jsonOut.bright.magenta = compressColor(input.bright.magenta);
+      jsonOut.bright.red = compressColor(input.bright.red);
+      jsonOut.bright.white = compressColor(input.bright.white);
+      jsonOut.bright.yellow = compressColor(input.bright.yellow);
+      jsonOut.primary.background = compressColor(input.primary.background);
+      jsonOut.primary.foreground = compressColor(input.primary.foreground);
+      jsonOut.selection.background = compressColor(input.selection.background);
+      jsonOut.selection.text = compressColor(input.selection.text);
+      jsonOut.cursor.cursor = compressColor(input.cursor.cursor);
+      jsonOut.cursor.text = compressColor(input.cursor.text);
 
-    var FULLJSON = JSON.stringify(jsonOut);
+      var FULLJSON = JSON.stringify(jsonOut);
+    }
 
     isDebug
       ? [
@@ -158,30 +160,32 @@ for (let i = 0; i < JSONS.length; i++) {
         ]
       : [];
 
-    jsonCss = cssClassGen(jsonOut.normal.black, "normal-black", jsonCss);
-    jsonCss = cssClassGen(jsonOut.normal.blue, "normal-blue", jsonCss);
-    jsonCss = cssClassGen(jsonOut.normal.cyan, "normal-cyan", jsonCss);
-    jsonCss = cssClassGen(jsonOut.normal.green, "normal-green", jsonCss);
-    jsonCss = cssClassGen(jsonOut.normal.magenta, "normal-magenta", jsonCss);
-    jsonCss = cssClassGen(jsonOut.normal.red, "normal-red", jsonCss);
-    jsonCss = cssClassGen(jsonOut.normal.white, "normal-white", jsonCss);
-    jsonCss = cssClassGen(jsonOut.normal.yellow, "normal-yellow", jsonCss);
-    jsonCss = cssClassGen(jsonOut.bright.black, "bright-black", jsonCss);
-    jsonCss = cssClassGen(jsonOut.bright.blue, "bright-blue", jsonCss);
-    jsonCss = cssClassGen(jsonOut.bright.cyan, "bright-cyan", jsonCss);
-    jsonCss = cssClassGen(jsonOut.bright.green, "bright-green", jsonCss);
-    jsonCss = cssClassGen(jsonOut.bright.magenta, "bright-magenta", jsonCss);
-    jsonCss = cssClassGen(jsonOut.bright.red, "bright-red", jsonCss);
-    jsonCss = cssClassGen(jsonOut.bright.white, "bright-white", jsonCss);
-    jsonCss = cssClassGen(jsonOut.bright.yellow, "bright-yellow", jsonCss);
-    jsonCss = cssClassGen(jsonOut.primary.background, "primary-background", jsonCss);
-    jsonCss = cssClassGen(jsonOut.primary.foreground, "primary-foreground", jsonCss);
-    jsonCss = cssClassGen(jsonOut.selection.background, "selection-background", jsonCss);
-    jsonCss = cssClassGen(jsonOut.selection.text, "selection-text", jsonCss);
-    jsonCss = cssClassGen(jsonOut.cursor.cursor, "cursor-cursor", jsonCss);
-    jsonCss = cssClassGen(jsonOut.cursor.text, "cursor-text", jsonCss);
+    {
+      jsonCss = cssClassGen(jsonOut.normal.black, "normal-black", jsonCss);
+      jsonCss = cssClassGen(jsonOut.normal.blue, "normal-blue", jsonCss);
+      jsonCss = cssClassGen(jsonOut.normal.cyan, "normal-cyan", jsonCss);
+      jsonCss = cssClassGen(jsonOut.normal.green, "normal-green", jsonCss);
+      jsonCss = cssClassGen(jsonOut.normal.magenta, "normal-magenta", jsonCss);
+      jsonCss = cssClassGen(jsonOut.normal.red, "normal-red", jsonCss);
+      jsonCss = cssClassGen(jsonOut.normal.white, "normal-white", jsonCss);
+      jsonCss = cssClassGen(jsonOut.normal.yellow, "normal-yellow", jsonCss);
+      jsonCss = cssClassGen(jsonOut.bright.black, "bright-black", jsonCss);
+      jsonCss = cssClassGen(jsonOut.bright.blue, "bright-blue", jsonCss);
+      jsonCss = cssClassGen(jsonOut.bright.cyan, "bright-cyan", jsonCss);
+      jsonCss = cssClassGen(jsonOut.bright.green, "bright-green", jsonCss);
+      jsonCss = cssClassGen(jsonOut.bright.magenta, "bright-magenta", jsonCss);
+      jsonCss = cssClassGen(jsonOut.bright.red, "bright-red", jsonCss);
+      jsonCss = cssClassGen(jsonOut.bright.white, "bright-white", jsonCss);
+      jsonCss = cssClassGen(jsonOut.bright.yellow, "bright-yellow", jsonCss);
+      jsonCss = cssClassGen(jsonOut.primary.background, "primary-background", jsonCss);
+      jsonCss = cssClassGen(jsonOut.primary.foreground, "primary-foreground", jsonCss);
+      jsonCss = cssClassGen(jsonOut.selection.background, "selection-background", jsonCss);
+      jsonCss = cssClassGen(jsonOut.selection.text, "selection-text", jsonCss);
+      jsonCss = cssClassGen(jsonOut.cursor.cursor, "cursor-cursor", jsonCss);
+      jsonCss = cssClassGen(jsonOut.cursor.text, "cursor-text", jsonCss);
 
-    var CSSCLASS = csso.minify(jsonToCss.of(jsonCss)).css;
+      var CSSCLASS = csso.minify(jsonToCss.of(jsonCss)).css;
+    }
 
     isDebug
       ? [
@@ -191,33 +195,35 @@ for (let i = 0; i < JSONS.length; i++) {
         ]
       : [];
 
-    jsonCss = {};
-    jsonCss[":root"] = {};
+    {
+      jsonCss = {};
+      jsonCss[":root"] = {};
 
-    jsonCss = cssVarGen(jsonOut.normal.black, "normal-black", jsonCss);
-    jsonCss = cssVarGen(jsonOut.normal.blue, "normal-blue", jsonCss);
-    jsonCss = cssVarGen(jsonOut.normal.cyan, "normal-cyan", jsonCss);
-    jsonCss = cssVarGen(jsonOut.normal.green, "normal-green", jsonCss);
-    jsonCss = cssVarGen(jsonOut.normal.magenta, "normal-magenta", jsonCss);
-    jsonCss = cssVarGen(jsonOut.normal.red, "normal-red", jsonCss);
-    jsonCss = cssVarGen(jsonOut.normal.white, "normal-white", jsonCss);
-    jsonCss = cssVarGen(jsonOut.normal.yellow, "normal-yellow", jsonCss);
-    jsonCss = cssVarGen(jsonOut.bright.black, "bright-black", jsonCss);
-    jsonCss = cssVarGen(jsonOut.bright.blue, "bright-blue", jsonCss);
-    jsonCss = cssVarGen(jsonOut.bright.cyan, "bright-cyan", jsonCss);
-    jsonCss = cssVarGen(jsonOut.bright.green, "bright-green", jsonCss);
-    jsonCss = cssVarGen(jsonOut.bright.magenta, "bright-magenta", jsonCss);
-    jsonCss = cssVarGen(jsonOut.bright.red, "bright-red", jsonCss);
-    jsonCss = cssVarGen(jsonOut.bright.white, "bright-white", jsonCss);
-    jsonCss = cssVarGen(jsonOut.bright.yellow, "bright-yellow", jsonCss);
-    jsonCss = cssVarGen(jsonOut.primary.background, "primary-background", jsonCss);
-    jsonCss = cssVarGen(jsonOut.primary.foreground, "primary-foreground", jsonCss);
-    jsonCss = cssVarGen(jsonOut.selection.background, "selection-background", jsonCss);
-    jsonCss = cssVarGen(jsonOut.selection.text, "selection-text", jsonCss);
-    jsonCss = cssVarGen(jsonOut.cursor.cursor, "cursor-cursor", jsonCss);
-    jsonCss = cssVarGen(jsonOut.cursor.text, "cursor-text", jsonCss);
+      jsonCss = cssVarGen(jsonOut.normal.black, "normal-black", jsonCss);
+      jsonCss = cssVarGen(jsonOut.normal.blue, "normal-blue", jsonCss);
+      jsonCss = cssVarGen(jsonOut.normal.cyan, "normal-cyan", jsonCss);
+      jsonCss = cssVarGen(jsonOut.normal.green, "normal-green", jsonCss);
+      jsonCss = cssVarGen(jsonOut.normal.magenta, "normal-magenta", jsonCss);
+      jsonCss = cssVarGen(jsonOut.normal.red, "normal-red", jsonCss);
+      jsonCss = cssVarGen(jsonOut.normal.white, "normal-white", jsonCss);
+      jsonCss = cssVarGen(jsonOut.normal.yellow, "normal-yellow", jsonCss);
+      jsonCss = cssVarGen(jsonOut.bright.black, "bright-black", jsonCss);
+      jsonCss = cssVarGen(jsonOut.bright.blue, "bright-blue", jsonCss);
+      jsonCss = cssVarGen(jsonOut.bright.cyan, "bright-cyan", jsonCss);
+      jsonCss = cssVarGen(jsonOut.bright.green, "bright-green", jsonCss);
+      jsonCss = cssVarGen(jsonOut.bright.magenta, "bright-magenta", jsonCss);
+      jsonCss = cssVarGen(jsonOut.bright.red, "bright-red", jsonCss);
+      jsonCss = cssVarGen(jsonOut.bright.white, "bright-white", jsonCss);
+      jsonCss = cssVarGen(jsonOut.bright.yellow, "bright-yellow", jsonCss);
+      jsonCss = cssVarGen(jsonOut.primary.background, "primary-background", jsonCss);
+      jsonCss = cssVarGen(jsonOut.primary.foreground, "primary-foreground", jsonCss);
+      jsonCss = cssVarGen(jsonOut.selection.background, "selection-background", jsonCss);
+      jsonCss = cssVarGen(jsonOut.selection.text, "selection-text", jsonCss);
+      jsonCss = cssVarGen(jsonOut.cursor.cursor, "cursor-cursor", jsonCss);
+      jsonCss = cssVarGen(jsonOut.cursor.text, "cursor-text", jsonCss);
 
-    var CSSVAR = csso.minify(jsonToCss.of(jsonCss)).css;
+      var CSSVAR = csso.minify(jsonToCss.of(jsonCss)).css;
+    }
 
     isDebug
       ? [
@@ -228,20 +234,20 @@ for (let i = 0; i < JSONS.length; i++) {
       : [];
 
     //
-    // console.log(chalk.redBright.bold("[ FULLJSON ]") + chalk.yellow(" writing to ") + chalk.magenta("json/" + filename + ".json"));
+    console.log(chalk.redBright.bold("[ FULLJSON ]") + chalk.yellow(" writing to ") + chalk.magenta("json/" + filename + ".json"));
     fs.writeFileSync("json/" + filename + ".json", FULLJSON);
     // prettier-ignore
-    console.log('cd json && git add "' + filename + ".json\" && git commit -s -m \"adding 'full+big json' version of '" + filename + "'\" && cd ..");
+    // console.log('cd json && git add "' + filename + ".json\" && git commit -s -m \"adding 'full+big json' version of '" + filename + "'\" && cd ..");
 
-    // console.log(chalk.redBright.bold("[ CSSCLASS ]") + chalk.yellow(" writing to ") + chalk.magenta("css-class/" + filename + ".css"));
+    console.log(chalk.redBright.bold("[ CSSCLASS ]") + chalk.yellow(" writing to ") + chalk.magenta("css-class/" + filename + ".css"));
     fs.writeFileSync("css-class/" + filename + ".css", CSSCLASS);
     // prettier-ignore
-    console.log('cd css-class && git add "' + filename + ".css\" && git commit -s -m \"adding 'full+big css-class' version of '" + filename + "'\" && cd ..");
+    // console.log('cd css-class && git add "' + filename + ".css\" && git commit -s -m \"adding 'full+big css-class' version of '" + filename + "'\" && cd ..");
 
-    // console.log(chalk.redBright.bold("[  CSSVAR  ]") + chalk.yellow(" writing to ") + chalk.magenta("css-var/" + filename + ".css"));
+    console.log(chalk.redBright.bold("[  CSSVAR  ]") + chalk.yellow(" writing to ") + chalk.magenta("css-var/" + filename + ".css"));
     fs.writeFileSync("css-var/" + filename + ".css", CSSVAR);
     // prettier-ignore
-    console.log('cd css-var && git add "' + filename + ".css\" && git commit -s -m \"adding 'full+big css-variable' version of '" + filename + "'\" && cd ..");
+    // console.log('cd css-var && git add "' + filename + ".css\" && git commit -s -m \"adding 'full+big css-variable' version of '" + filename + "'\" && cd ..");
 
     //
   } catch (e) {
