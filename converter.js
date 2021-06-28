@@ -366,20 +366,35 @@ for (let i = 0; i < JSONS.length; i++) {
       : [];
 
     //
-    console.log(chalk.redBright.bold("[ FULLJSON ]") + chalk.yellow(" writing to ") + chalk.magenta("json/" + filename + ".json"));
+    console.log(chalk.redBright.bold("[ FULLJSON    ]") + chalk.yellow(" writing to ") + chalk.magenta("json/" + filename + ".json"));
     fs.writeFileSync("json/" + filename + ".json", FULLJSON);
     // prettier-ignore
     // console.log('cd json && git add "' + filename + ".json\" && git commit -s -m \"adding 'full+big json' version of '" + filename + "'\" && cd ..");
 
-    console.log(chalk.redBright.bold("[ CSSCLASS ]") + chalk.yellow(" writing to ") + chalk.magenta("css-class/" + filename + ".css"));
+    console.log(chalk.redBright.bold("[ MINJSON     ]") + chalk.yellow(" writing to ") + chalk.magenta("json-min/" + filename + ".json"));
+    fs.writeFileSync("json-min/" + filename + ".json", MINJSON);
+    // prettier-ignore
+    // console.log('cd json-min && git add "' + filename + ".json\" && git commit -s -m \"adding 'full+min json' version of '" + filename + "'\" && cd ..");
+
+    console.log(chalk.redBright.bold("[ CSSCLASS    ]") + chalk.yellow(" writing to ") + chalk.magenta("css-class/" + filename + ".css"));
     fs.writeFileSync("css-class/" + filename + ".css", CSSCLASS);
     // prettier-ignore
     // console.log('cd css-class && git add "' + filename + ".css\" && git commit -s -m \"adding 'full+big css-class' version of '" + filename + "'\" && cd ..");
 
-    console.log(chalk.redBright.bold("[  CSSVAR  ]") + chalk.yellow(" writing to ") + chalk.magenta("css-var/" + filename + ".css"));
+    console.log(chalk.redBright.bold("[ MINCSSCLASS ]") + chalk.yellow(" writing to ") + chalk.magenta("css-class-min/" + filename + ".css"));
+    fs.writeFileSync("css-class-min/" + filename + ".css", MINCSSCLASS);
+    // prettier-ignore
+    // console.log('cd css-class-min && git add "' + filename + ".css\" && git commit -s -m \"adding 'full+min css-class' version of '" + filename + "'\" && cd ..");
+
+    console.log(chalk.redBright.bold("[ CSSVAR      ]") + chalk.yellow(" writing to ") + chalk.magenta("css-var/" + filename + ".css"));
     fs.writeFileSync("css-var/" + filename + ".css", CSSVAR);
     // prettier-ignore
     // console.log('cd css-var && git add "' + filename + ".css\" && git commit -s -m \"adding 'full+big css-variable' version of '" + filename + "'\" && cd ..");
+
+    console.log(chalk.redBright.bold("[ MINCSSVAR   ]") + chalk.yellow(" writing to ") + chalk.magenta("css-var-min/" + filename + ".css"));
+    fs.writeFileSync("css-var-min/" + filename + ".css", MINCSSVAR);
+    // prettier-ignore
+    // console.log('cd css-var-min && git add "' + filename + ".css\" && git commit -s -m \"adding 'full+min css-variable' version of '" + filename + "'\" && cd ..");
 
     //
   } catch (e) {
