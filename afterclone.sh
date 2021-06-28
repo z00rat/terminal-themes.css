@@ -39,6 +39,7 @@ git worktree add json json
 git worktree add css-class css-class
 git worktree add css-var css-var
 git worktree add json-min json-min
+git worktree add css-class-min css-class-min
 
 echo ""
 
