@@ -38,6 +38,7 @@ tput sgr0
 git worktree add json json
 git worktree add css-class css-class
 git worktree add css-var css-var
+git worktree add json-min json-min
 
 echo ""
 
