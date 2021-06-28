@@ -11,14 +11,14 @@ please open an issue if needed.
 
 ---
 ## variants 
-| branch names  |         description          | compact naming | cursor | selection |
-| :-----------: | :--------------------------: | :------------: | :----: | :-------: |
-|     json      |       raw json version       |       🔴        |   🟢    |     🟢     |
-|   json-min    |   json with compact naming   |       🟢        |   🟢    |     🟢     |
-|   css-class   |     colors as css class      |       🔴        |   🟢    |     🟢     |
-| css-class-min | css-class but compact naming |       🟢        |   🟢    |     🟢     |
-|    css-var    |   colors as css variables    |       🔴        |   🟢    |     🟢     |
-|  css-var-min  |  css-var but compact naming  |       🟢        |   🟢    |     🟢     |
+|                                   branch names                                    |         description          | compact naming | cursor | selection |
+| :-------------------------------------------------------------------------------: | :--------------------------: | :------------: | :----: | :-------: |
+|          [json](https://github.com/z00rat/terminal-themes.css/tree/json)          |       raw json version       |       🔴        |   🟢    |     🟢     |
+|      [json-min](https://github.com/z00rat/terminal-themes.css/tree/json-min)      |   json with compact naming   |       🟢        |   🟢    |     🟢     |
+|     [css-class](https://github.com/z00rat/terminal-themes.css/tree/css-class)     |     colors as css class      |       🔴        |   🟢    |     🟢     |
+| [css-class-min](https://github.com/z00rat/terminal-themes.css/tree/css-class-min) | css-class but compact naming |       🟢        |   🟢    |     🟢     |
+|       [css-var](https://github.com/z00rat/terminal-themes.css/tree/css-var)       |   colors as css variables    |       🔴        |   🟢    |     🟢     |
+|   [css-var-min](https://github.com/z00rat/terminal-themes.css/tree/css-var-min)   |  css-var but compact naming  |       🟢        |   🟢    |     🟢     |
 
 if you need or have any idea about any other possible variant please open an issue. 
 
