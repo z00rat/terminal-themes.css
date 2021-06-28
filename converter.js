@@ -110,6 +110,7 @@ for (let i = 0; i < JSONS.length; i++) {
     input = JSONS[i].colors;
     filename = JSONS[i].filename;
     jsonOut = {};
+    jsonOutMin = {};
     jsonCss = {};
 
     isDebug ? [console.log(chalk.bgRedBright.black(filename + " :"))] : [];
@@ -157,6 +158,40 @@ for (let i = 0; i < JSONS.length; i++) {
       ? [
           // console.log(chalk.bgBlueBright.black(JSON.stringify(input))),
           console.log(chalk.bgBlueBright.black(JSON.stringify(jsonOut))),
+        ]
+      : [];
+
+    {
+      jsonOutMin.N0 = jsonOut.normal.black;
+      jsonOutMin.N1 = jsonOut.normal.red;
+      jsonOutMin.N2 = jsonOut.normal.green;
+      jsonOutMin.N3 = jsonOut.normal.yellow;
+      jsonOutMin.N4 = jsonOut.normal.blue;
+      jsonOutMin.N5 = jsonOut.normal.magenta;
+      jsonOutMin.N6 = jsonOut.normal.cyan;
+      jsonOutMin.N7 = jsonOut.normal.white;
+      jsonOutMin.N0 = jsonOut.bright.black;
+      jsonOutMin.N1 = jsonOut.bright.red;
+      jsonOutMin.N2 = jsonOut.bright.green;
+      jsonOutMin.N3 = jsonOut.bright.yellow;
+      jsonOutMin.N4 = jsonOut.bright.blue;
+      jsonOutMin.N5 = jsonOut.bright.magenta;
+      jsonOutMin.N6 = jsonOut.bright.cyan;
+      jsonOutMin.N7 = jsonOut.bright.white;
+      jsonOutMin.Pb = jsonOut.primary.background;
+      jsonOutMin.Pf = jsonOut.primary.foreground;
+      jsonOutMin.Sb = jsonOut.selection.background;
+      jsonOutMin.St = jsonOut.selection.text;
+      jsonOutMin.Cc = jsonOut.cursor.cursor;
+      jsonOutMin.Ct = jsonOut.cursor.text;
+
+      var MINJSON = JSON.stringify(jsonOutMin);
+    }
+
+    isDebug
+      ? [
+          // console.log(chalk.bgBlueBright.black(JSON.stringify(input))),
+          console.log(chalk.bgBlue.black(JSON.stringify(jsonOutMin))),
         ]
       : [];
 
