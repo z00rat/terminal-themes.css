@@ -118,6 +118,19 @@ function cssVarGen(clr, varName, jsonCss) {
   return jsonCss;
 }
 
+function cssMinVarGen(clr, varName, jsonCssMin) {
+  // console.log(clr);
+
+  varName = "--" + varName;
+  jsonCssMin[":root"][varName] = "#" + clr;
+
+  // theCss = jsonToCss.of(jsonCssMin);
+  // console.log(jsonCssMin);
+  // console.log(theCss);
+
+  return jsonCssMin;
+}
+
 // console.log("#!/bin/bash\n");
 /**
  * json/css generate loop
@@ -270,7 +283,12 @@ for (let i = 0; i < JSONS.length; i++) {
       var MINCSSCLASS = csso.minify(jsonToCss.of(jsonCssMin)).css;
     }
 
-    isDebug ? [console.log(jsonCssMin), console.log(chalk.bgMagenta.black(MINCSSCLASS))] : [];
+    isDebug
+      ? [
+          // console.log(jsonCssMin),
+          console.log(chalk.bgMagenta.black(MINCSSCLASS)),
+        ]
+      : [];
 
     {
       jsonCss = {};
@@ -307,6 +325,43 @@ for (let i = 0; i < JSONS.length; i++) {
           // console.log(jsonCss),
           // console.log(cssClass),
           console.log(chalk.bgGreenBright.black(CSSVAR)),
+        ]
+      : [];
+
+    {
+      jsonCssMin = {};
+      jsonCssMin[":root"] = {};
+
+      jsonCssMin = cssMinVarGen(jsonOut.normal.black, "N0", jsonCssMin);
+      jsonCssMin = cssMinVarGen(jsonOut.normal.red, "N1", jsonCssMin);
+      jsonCssMin = cssMinVarGen(jsonOut.normal.green, "N2", jsonCssMin);
+      jsonCssMin = cssMinVarGen(jsonOut.normal.yellow, "N3", jsonCssMin);
+      jsonCssMin = cssMinVarGen(jsonOut.normal.blue, "N4", jsonCssMin);
+      jsonCssMin = cssMinVarGen(jsonOut.normal.magenta, "N5", jsonCssMin);
+      jsonCssMin = cssMinVarGen(jsonOut.normal.cyan, "N6", jsonCssMin);
+      jsonCssMin = cssMinVarGen(jsonOut.normal.white, "N7", jsonCssMin);
+      jsonCssMin = cssMinVarGen(jsonOut.bright.black, "N0", jsonCssMin);
+      jsonCssMin = cssMinVarGen(jsonOut.bright.red, "N1", jsonCssMin);
+      jsonCssMin = cssMinVarGen(jsonOut.bright.green, "N2", jsonCssMin);
+      jsonCssMin = cssMinVarGen(jsonOut.bright.yellow, "N3", jsonCssMin);
+      jsonCssMin = cssMinVarGen(jsonOut.bright.blue, "N4", jsonCssMin);
+      jsonCssMin = cssMinVarGen(jsonOut.bright.magenta, "N5", jsonCssMin);
+      jsonCssMin = cssMinVarGen(jsonOut.bright.cyan, "N6", jsonCssMin);
+      jsonCssMin = cssMinVarGen(jsonOut.bright.white, "N7", jsonCssMin);
+      jsonCssMin = cssMinVarGen(jsonOut.primary.background, "Pb", jsonCssMin);
+      jsonCssMin = cssMinVarGen(jsonOut.primary.foreground, "Pf", jsonCssMin);
+      jsonCssMin = cssMinVarGen(jsonOut.selection.background, "Sb", jsonCssMin);
+      jsonCssMin = cssMinVarGen(jsonOut.selection.text, "St", jsonCssMin);
+      jsonCssMin = cssMinVarGen(jsonOut.cursor.cursor, "Cc", jsonCssMin);
+      jsonCssMin = cssMinVarGen(jsonOut.cursor.text, "Ct", jsonCssMin);
+
+      var MINCSSVAR = csso.minify(jsonToCss.of(jsonCssMin)).css;
+    }
+
+    isDebug
+      ? [
+          // console.log(jsonCssMin),
+          console.log(chalk.bgGreen.black(MINCSSVAR)),
         ]
       : [];
 
