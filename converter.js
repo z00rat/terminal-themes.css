@@ -88,6 +88,23 @@ function cssClassGen(clr, className, jsonCss) {
   return jsonCss;
 }
 
+function cssMinClassGen(clr, className, jsonCssMin) {
+  // console.log(clr);
+
+  className = "." + className;
+  jsonCssMin[className] = {};
+  jsonCssMin[className].color = "#" + clr;
+
+  className = className + "B";
+  jsonCssMin[className] = {};
+  jsonCssMin[className]["background-color"] = "#" + clr;
+  // theCss = jsonToCss.of(jsonCssMin);
+  // console.log(jsonCssMin);
+  // console.log(theCss);
+
+  return jsonCssMin;
+}
+
 function cssVarGen(clr, varName, jsonCss) {
   // console.log(clr);
 
@@ -112,6 +129,7 @@ for (let i = 0; i < JSONS.length; i++) {
     jsonOut = {};
     jsonOutMin = {};
     jsonCss = {};
+    jsonCssMin = {};
 
     isDebug ? [console.log(chalk.bgRedBright.black(filename + " :"))] : [];
     console.log(chalk.bold.green("FILE NAME: ") + chalk.italic.underline.blue(filename));
@@ -188,12 +206,7 @@ for (let i = 0; i < JSONS.length; i++) {
       var MINJSON = JSON.stringify(jsonOutMin);
     }
 
-    isDebug
-      ? [
-          // console.log(chalk.bgBlueBright.black(JSON.stringify(input))),
-          console.log(chalk.bgBlue.black(JSON.stringify(jsonOutMin))),
-        ]
-      : [];
+    isDebug ? [console.log(chalk.bgBlue.black(JSON.stringify(jsonOutMin)))] : [];
 
     {
       jsonCss = cssClassGen(jsonOut.normal.black, "normal-black", jsonCss);
@@ -229,6 +242,35 @@ for (let i = 0; i < JSONS.length; i++) {
           console.log(chalk.bgMagentaBright.black(CSSCLASS)),
         ]
       : [];
+
+    {
+      jsonCssMin = cssMinClassGen(jsonOut.normal.black, "N0", jsonCssMin);
+      jsonCssMin = cssMinClassGen(jsonOut.normal.red, "N1", jsonCssMin);
+      jsonCssMin = cssMinClassGen(jsonOut.normal.green, "N2", jsonCssMin);
+      jsonCssMin = cssMinClassGen(jsonOut.normal.yellow, "N3", jsonCssMin);
+      jsonCssMin = cssMinClassGen(jsonOut.normal.blue, "N4", jsonCssMin);
+      jsonCssMin = cssMinClassGen(jsonOut.normal.magenta, "N5", jsonCssMin);
+      jsonCssMin = cssMinClassGen(jsonOut.normal.cyan, "N6", jsonCssMin);
+      jsonCssMin = cssMinClassGen(jsonOut.normal.white, "N7", jsonCssMin);
+      jsonCssMin = cssMinClassGen(jsonOut.bright.black, "N0", jsonCssMin);
+      jsonCssMin = cssMinClassGen(jsonOut.bright.red, "N1", jsonCssMin);
+      jsonCssMin = cssMinClassGen(jsonOut.bright.green, "N2", jsonCssMin);
+      jsonCssMin = cssMinClassGen(jsonOut.bright.yellow, "N3", jsonCssMin);
+      jsonCssMin = cssMinClassGen(jsonOut.bright.blue, "N4", jsonCssMin);
+      jsonCssMin = cssMinClassGen(jsonOut.bright.magenta, "N5", jsonCssMin);
+      jsonCssMin = cssMinClassGen(jsonOut.bright.cyan, "N6", jsonCssMin);
+      jsonCssMin = cssMinClassGen(jsonOut.bright.white, "N7", jsonCssMin);
+      jsonCssMin = cssMinClassGen(jsonOut.primary.background, "Pb", jsonCssMin);
+      jsonCssMin = cssMinClassGen(jsonOut.primary.foreground, "Pf", jsonCssMin);
+      jsonCssMin = cssMinClassGen(jsonOut.selection.background, "Sb", jsonCssMin);
+      jsonCssMin = cssMinClassGen(jsonOut.selection.text, "St", jsonCssMin);
+      jsonCssMin = cssMinClassGen(jsonOut.cursor.cursor, "Cc", jsonCssMin);
+      jsonCssMin = cssMinClassGen(jsonOut.cursor.text, "Ct", jsonCssMin);
+
+      var MINCSSCLASS = csso.minify(jsonToCss.of(jsonCssMin)).css;
+    }
+
+    isDebug ? [console.log(jsonCssMin), console.log(chalk.bgMagenta.black(MINCSSCLASS))] : [];
 
     {
       jsonCss = {};
