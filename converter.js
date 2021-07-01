@@ -240,10 +240,10 @@ for (let i = 0; i < JSONS.length; i++) {
       jsonCss = cssClassGen(jsonOut.bright.yellow, "bright-yellow", jsonCss);
       jsonCss = cssClassGen(jsonOut.primary.background, "primary-background", jsonCss);
       jsonCss = cssClassGen(jsonOut.primary.foreground, "primary-foreground", jsonCss);
-      jsonCss = cssClassGen(jsonOut.selection.background, "selection-background", jsonCss);
-      jsonCss = cssClassGen(jsonOut.selection.text, "selection-text", jsonCss);
-      jsonCss = cssClassGen(jsonOut.cursor.cursor, "cursor-cursor", jsonCss);
-      jsonCss = cssClassGen(jsonOut.cursor.text, "cursor-text", jsonCss);
+      // jsonCss = cssClassGen(jsonOut.selection.background, "selection-background", jsonCss);
+      // jsonCss = cssClassGen(jsonOut.selection.text, "selection-text", jsonCss);
+      // jsonCss = cssClassGen(jsonOut.cursor.cursor, "cursor-cursor", jsonCss);
+      // jsonCss = cssClassGen(jsonOut.cursor.text, "cursor-text", jsonCss);
 
       var CSSCLASS = csso.minify(jsonToCss.of(jsonCss)).css;
     }
@@ -275,10 +275,10 @@ for (let i = 0; i < JSONS.length; i++) {
       jsonCssMin = cssMinClassGen(jsonOut.bright.white, "B7", jsonCssMin);
       jsonCssMin = cssMinClassGen(jsonOut.primary.background, "Pb", jsonCssMin);
       jsonCssMin = cssMinClassGen(jsonOut.primary.foreground, "Pf", jsonCssMin);
-      jsonCssMin = cssMinClassGen(jsonOut.selection.background, "Sb", jsonCssMin);
-      jsonCssMin = cssMinClassGen(jsonOut.selection.text, "St", jsonCssMin);
-      jsonCssMin = cssMinClassGen(jsonOut.cursor.cursor, "Cc", jsonCssMin);
-      jsonCssMin = cssMinClassGen(jsonOut.cursor.text, "Ct", jsonCssMin);
+      // jsonCssMin = cssMinClassGen(jsonOut.selection.background, "Sb", jsonCssMin);
+      // jsonCssMin = cssMinClassGen(jsonOut.selection.text, "St", jsonCssMin);
+      // jsonCssMin = cssMinClassGen(jsonOut.cursor.cursor, "Cc", jsonCssMin);
+      // jsonCssMin = cssMinClassGen(jsonOut.cursor.text, "Ct", jsonCssMin);
 
       var MINCSSCLASS = csso.minify(jsonToCss.of(jsonCssMin)).css;
     }
