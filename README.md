@@ -25,30 +25,30 @@ please open an issue if needed.
 |       [css-var](https://github.com/z00rat/terminal-themes.css/tree/css-var)       |   colors as css variables    |       🔴       |   🟢   |    🟢     |
 |   [css-var-min](https://github.com/z00rat/terminal-themes.css/tree/css-var-min)   |  css-var but compact naming  |       🟢       |   🟢   |    🟢     |
 
-| color name           |                    json | json min |           css class | css class min |                     css var | css var min |
-| :------------------- | ----------------------: | -------: | ------------------: | ------------: | --------------------------: | ----------: |
-| normal black         |         JT.normal.black |    JT.N0 |       .normal-black |           .N0 |         var(--normal-black) |   var(--N0) |
-| normal red           |           JT.normal.red |    JT.N1 |         .normal-red |           .N1 |           var(--normal-red) |   var(--N1) |
-| normal green         |         JT.normal.green |    JT.N2 |       .normal-green |           .N2 |         var(--normal-green) |   var(--N2) |
-| normal yellow        |        JT.normal.yellow |    JT.N3 |      .normal-yellow |           .N3 |        var(--normal-yellow) |   var(--N3) |
-| normal blue          |          JT.normal.blue |    JT.N4 |        .normal-blue |           .N4 |          var(--normal-blue) |   var(--N4) |
-| normal magenta       |       JT.normal.magenta |    JT.N5 |     .normal-magenta |           .N5 |       var(--normal-magenta) |   var(--N5) |
-| normal cyan          |          JT.normal.cyan |    JT.N6 |        .normal-cyan |           .N6 |          var(--normal-cyan) |   var(--N6) |
-| normal white         |         JT.normal.white |    JT.N7 |       .normal-white |           .N7 |         var(--normal-white) |   var(--N7) |
-| bright black         |         JT.bright.black |    JT.B0 |       .bright-black |           .B0 |         var(--bright-black) |   var(--B0) |
-| bright red           |           JT.bright.red |    JT.B1 |         .bright-red |           .B1 |           var(--bright-red) |   var(--B1) |
-| bright green         |         JT.bright.green |    JT.B2 |       .bright-green |           .B2 |         var(--bright-green) |   var(--B2) |
-| bright yellow        |        JT.bright.yellow |    JT.B3 |      .bright-yellow |           .B3 |        var(--bright-yellow) |   var(--B3) |
-| bright blue          |          JT.bright.blue |    JT.B4 |        .bright-blue |           .B4 |          var(--bright-blue) |   var(--B4) |
-| bright magenta       |       JT.bright.magenta |    JT.B5 |     .bright-magenta |           .B5 |       var(--bright-magenta) |   var(--B5) |
-| bright cyan          |          JT.bright.cyan |    JT.B6 |        .bright-cyan |           .B6 |          var(--bright-cyan) |   var(--B6) |
-| bright white         |         JT.bright.white |    JT.B7 |       .bright-white |           .B7 |         var(--bright-white) |   var(--B7) |
-| primary background   |   JT.primary.background |    JT.Pb | .primary-background |           .Pb |   var(--primary-background) |   var(--Pb) |
-| primary foreground   |   JT.primary.foreground |    JT.Pf | .primary-foreground |           .Pf |   var(--primary-foreground) |   var(--Pf) |
-| selection background | JT.selection.background |    JT.Sb |                  🚫 |            🚫 | var(--selection-background) |   var(--Sb) |
-| selection text       |       JT.selection.text |    JT.St |                  🚫 |            🚫 |       var(--selection-text) |   var(--St) |
-| cursor cursor        |        JT.cursor.cursor |    JT.Cc |                  🚫 |            🚫 |        var(--cursor-cursor) |   var(--Cc) |
-| cursor text          |          JT.cursor.text |    JT.Ct |                  🚫 |            🚫 |          var(--cursor-text) |   var(--Ct) |
+| color name           |                    json | json min |           css class | css class min |                css var | css var min |
+| :------------------- | ----------------------: | -------: | ------------------: | ------------: | ---------------------: | ----------: |
+| normal black         |         JT.normal.black |    JT.N0 |       .normal-black |           .N0 |         --normal-black |        --N0 |
+| normal red           |           JT.normal.red |    JT.N1 |         .normal-red |           .N1 |           --normal-red |        --N1 |
+| normal green         |         JT.normal.green |    JT.N2 |       .normal-green |           .N2 |         --normal-green |        --N2 |
+| normal yellow        |        JT.normal.yellow |    JT.N3 |      .normal-yellow |           .N3 |        --normal-yellow |        --N3 |
+| normal blue          |          JT.normal.blue |    JT.N4 |        .normal-blue |           .N4 |          --normal-blue |        --N4 |
+| normal magenta       |       JT.normal.magenta |    JT.N5 |     .normal-magenta |           .N5 |       --normal-magenta |        --N5 |
+| normal cyan          |          JT.normal.cyan |    JT.N6 |        .normal-cyan |           .N6 |          --normal-cyan |        --N6 |
+| normal white         |         JT.normal.white |    JT.N7 |       .normal-white |           .N7 |         --normal-white |        --N7 |
+| bright black         |         JT.bright.black |    JT.B0 |       .bright-black |           .B0 |         --bright-black |        --B0 |
+| bright red           |           JT.bright.red |    JT.B1 |         .bright-red |           .B1 |           --bright-red |        --B1 |
+| bright green         |         JT.bright.green |    JT.B2 |       .bright-green |           .B2 |         --bright-green |        --B2 |
+| bright yellow        |        JT.bright.yellow |    JT.B3 |      .bright-yellow |           .B3 |        --bright-yellow |        --B3 |
+| bright blue          |          JT.bright.blue |    JT.B4 |        .bright-blue |           .B4 |          --bright-blue |        --B4 |
+| bright magenta       |       JT.bright.magenta |    JT.B5 |     .bright-magenta |           .B5 |       --bright-magenta |        --B5 |
+| bright cyan          |          JT.bright.cyan |    JT.B6 |        .bright-cyan |           .B6 |          --bright-cyan |        --B6 |
+| bright white         |         JT.bright.white |    JT.B7 |       .bright-white |           .B7 |         --bright-white |        --B7 |
+| primary background   |   JT.primary.background |    JT.Pb | .primary-background |           .Pb |   --primary-background |        --Pb |
+| primary foreground   |   JT.primary.foreground |    JT.Pf | .primary-foreground |           .Pf |   --primary-foreground |        --Pf |
+| selection background | JT.selection.background |    JT.Sb |                  🚫 |            🚫 | --selection-background |        --Sb |
+| selection text       |       JT.selection.text |    JT.St |                  🚫 |            🚫 |       --selection-text |        --St |
+| cursor cursor        |        JT.cursor.cursor |    JT.Cc |                  🚫 |            🚫 |        --cursor-cursor |        --Cc |
+| cursor text          |          JT.cursor.text |    JT.Ct |                  🚫 |            🚫 |          --cursor-text |        --Ct |
 
 🚫 means there is no support for that color in the version
 for example: there is no point to have `selection` or `cursor` color as class, because you can't use them.
