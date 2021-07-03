@@ -131,6 +131,7 @@ function cssMinVarGen(clr, varName, jsonCssMin) {
   return jsonCssMin;
 }
 
+var FILENAMES = [];
 // console.log("#!/bin/bash\n");
 /**
  * json/css generate loop
@@ -149,9 +150,10 @@ for (let i = 0; i < JSONS.length; i++) {
     // console.log('tput setaf 3 && echo "FILE: ' + filename + '" && tput sgr0');
 
     if (input.selection == null || input.cursor == null) {
-      // console.log(chalk.bold.red("this file don't have any 'selection' or 'cursor', which is not acceptable."));
+      console.log(chalk.bold.red("this file don't have any 'selection' or 'cursor', which is not acceptable."));
       continue;
     }
+    FILENAMES.push(filename);
 
     {
       jsonOut.normal = {};
@@ -402,3 +404,6 @@ for (let i = 0; i < JSONS.length; i++) {
     console.log(e);
   }
 }
+
+console.log(chalk.bgBlueBright.black("THEME COUNT: " + FILENAMES.length));
+isDebug ? [] : [fs.writeFileSync("themes.json", JSON.stringify(FILENAMES))];
