@@ -60,6 +60,8 @@ for example: there is no point to have `selection` or `cursor` color as class, b
 
 - short color name's numerical color code is taken from https://en.wikipedia.org/wiki/ANSI_escape_code#3-bit_and_4-bit
 
+size of all those versions at https://github.com/z00rat/terminal-themes.css/blob/master/size.md
+
 if you need or have any idea about any other possible variant please open an issue.
 
 ---
@@ -82,7 +84,7 @@ if you need or have any idea about any other possible variant please open an iss
 - [css](https://www.npmjs.com/package/css) _for css to json_
 - [csso](https://www.npmjs.com/package/csso) _for compressing hex color_
 - [json-to-css](https://www.npmjs.com/package/json-to-css) _for json to css_
-- **git & github** _why not ??_
-- ***
 
-  star it if you like
+---
+
+star the project if you like it.
