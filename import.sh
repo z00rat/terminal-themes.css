@@ -28,7 +28,7 @@ if [ ! -d "tmp/" ]; then
 fi
 
 # https://superuser.com/a/271992
-echo "collecting color plates from 'https://github.com/mbadolato/iTerm2-Color-Schemes/tree/master/alacritty'"
+echo "collecting color plattes from 'https://github.com/mbadolato/iTerm2-Color-Schemes/tree/master/alacritty'"
 (cd "tmp/" && svn checkout https://github.com/mbadolato/iTerm2-Color-Schemes/trunk/alacritty/)
 cp -r tmp/alacritty/* sources/iTerm2-Color-Schemes__trunk__alacritty
 

@@ -7,9 +7,9 @@ Terminal color schemes/themes as css or json file for using those in browser.
 ## status
 
 there is not much to here,
-color plate is not something that ever got an update.
+color platte is not something that ever got an update.
 so, for the most part after writing the converter script this repo will be kinda dead.
-unless any new color plate got released or any bug can be found.
+unless any new color platte got released or any bug can be found.
 please open an issue if needed.
 
 ---
