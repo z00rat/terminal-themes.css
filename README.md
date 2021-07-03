@@ -58,11 +58,28 @@ for example: there is no point to have `selection` or `cursor` color as class, b
 - add "B" at the end of the **css-class-min** name to use it as background color. e.g. `.B4B` for back as background color.
 - import **any variable version** by `<link rel="stylesheet" href="assets/css-var/nord.css" />` and use the color anywhere you want.
 
-- short color name's numerical color code is taken from https://en.wikipedia.org/wiki/ANSI_escape_code#3-bit_and_4-bit
+- short color name's numerical color code is taken from [wiki/ANSI_escape_code](https://en.wikipedia.org/wiki/ANSI_escape_code#3-bit_and_4-bit)
 
-size of all those versions at https://github.com/z00rat/terminal-themes.css/blob/master/size.md
+size of all those versions at [size.md](https://github.com/z00rat/terminal-themes.css/blob/master/size.md)
 
 if you need or have any idea about any other possible variant please open an issue.
+
+---
+
+### how to use
+
+to clone a version use this command
+and change `<branch>` with that branch name and change `<folder>` with the destination directory
+
+```sh
+git clone https://github.com/z00rat/terminal-themes.css --branch <branch> --single-branch <folder>
+```
+
+e.g. **css-var-min** version to **css** folder
+
+```sh
+git clone https://github.com/z00rat/terminal-themes.css --branch css-var-min --single-branch css
+```
 
 ---
 
