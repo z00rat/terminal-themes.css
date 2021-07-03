@@ -29,7 +29,7 @@ for (let i = 0; i < options.file.length; i++) {
     /**
      * @tutorial https://stackoverflow.com/a/50502331
      */
-    JSONS[i].filename = path.basename(options.file[i], path.extname(options.file[i]));
+    JSONS[i].filename = path.basename(options.file[i], path.extname(options.file[i])).split(" ").join("_");
     isDebug
       ? [
           console.log(
