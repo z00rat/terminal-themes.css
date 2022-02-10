@@ -15,9 +15,9 @@
   "homepage": "https://github.com/z00rat/terminal-themes.css#readme",
   "dependencies": {
     "chalk": "^4.1.1",
-    "commander": "^7.2.0",
+    "commander": "^9.0.0",
     "css": "^3.0.0",
-    "csso": "^4.2.0",
+    "csso": "^5.0.2",
     "js-yaml": "^4.1.0",
     "json-to-css": "^0.1.0"
   }
